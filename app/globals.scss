@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  display: grid;
+  min-height: 100vh;
+  grid-template: min-content minmax(calc(100vh - 75px), auto) / 1fr;
+  color: rgb(15, 15, 15);
+  background-color: aliceblue;
+}
