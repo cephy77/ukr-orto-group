@@ -1,10 +1,11 @@
 import Image from 'next/image';
+import mainImage from '../assets/hero_tech-shoulder.jpeg'
 
 export default function Home() {
   return (
     <>
       < Image
-        src="https://medacta-cms-attachments-production.s3.eu-west-3.amazonaws.com/2023-11/hero_tech-shoulder.jpg"
+        src={mainImage}
         alt="Medical Info"
         width={0}
         height={0}
