@@ -3,52 +3,47 @@ import cn from 'classnames';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+const routes = [
+  {
+    path: '/',
+    label: 'Про Нас'
+  },
+  {
+    path: '/patient',
+    label: 'Пацієнтам'
+  },
+  {
+    path: '/med',
+    label: 'Лікарям'
+  },
+  {
+    path: '/contacts',
+    label: 'Контакти'
+  }
+]
+
 export function NavBlock() {
-  const path = usePathname();
+  const currentPath = usePathname();
 
   return (
-    <nav>
-      <ul className='flex justify-around gap-3'>
-        <li>
-          <Link
-            href="/"
-            className={cn({
-              'text-red-600': path === '/'
-            })}
+    <nav className='w-full border-t-2 border-gray-400 md:border-t-0 pt-9 px-6 md:pt-0'>
+      <ul className='flex flex-col w-1/2 md:w-full md:flex-row justify-around gap-1 md:gap-3'>
+        {routes.map(({ path, label }) => (
+          <li
+            className={cn(
+              'p-1 w-max rounded text-lg font-semibold md:text-center transition-all',
+              {
+                'text-sky-900 bg-sky-200': currentPath === path,
+                'md:bg-gray-300 hover:translate-x-3 md:hover:-translate-y-1 md:hover:translate-x-0': currentPath !== path
+              }
+            )}
+            key={path}
           >
-            Про Нас
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/patient"
-            className={cn({
-              'text-red-600': path === '/patient'
-            })}
-          >
-            Пацієнтам
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/med"
-            className={cn({
-              'text-red-600': path === '/med'
-            })}
-          >
-            Лікарям
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/contacts"
-            className={cn({
-              'text-red-600': path === '/contacts'
-            })}
-          >
-            Контакти
-          </Link>
-        </li>
+            <Link href={path}>
+              {label}
+            </Link>
+          </li>
+        ))}
       </ul>
     </nav>
   )
