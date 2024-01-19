@@ -19,10 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn('bg-sky-100', inter.className)}>
+      <body className={cn('bg-sky-50', inter.className)}>
         <Header />
         <div className='flex flex-col justify-between'>
-          <main className="flex flex-col p-4 bg-sky-50 grow">
+          <main className="flex flex-col bg-slate-50 grow">
             {children}
           </main>
           <Footer />

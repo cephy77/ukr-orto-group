@@ -31,15 +31,23 @@ export function NavBlock() {
         {routes.map(({ path, label }) => (
           <li
             className={cn(
-              'p-1 w-max rounded text-lg font-semibold md:text-center transition-all',
+              'transition-all',
               {
-                'text-sky-900 bg-sky-200': currentPath === path,
-                'md:bg-gray-300 hover:translate-x-3 md:hover:-translate-y-1 md:hover:translate-x-0': currentPath !== path
+                'hover:translate-x-3 md:hover:-translate-y-1 md:hover:translate-x-0': currentPath !== path
               }
             )}
             key={path}
           >
-            <Link href={path}>
+            <Link
+              href={path}
+              className={cn(
+                'p-1 w-max rounded text-lg font-semibold md:text-center',
+                {
+                  'text-sky-900 bg-sky-200': currentPath === path,
+                  'md:bg-gray-300': currentPath !== path
+                }
+              )}
+            >
               {label}
             </Link>
           </li>
