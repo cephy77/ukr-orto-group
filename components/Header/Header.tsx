@@ -13,11 +13,11 @@ export function Header() {
 
   return (
     <header
-      className='border-b-2 bg-sky-50 border-sky-500 flex sticky top-0 flex-col lg:flex-row lg:justify-between items-center'
+      className='sticky top-0 z-50 flex flex-col items-center border-b-2 bg-sky-50 border-sky-500 lg:flex-row lg:justify-between'
     >
       <div className='flex justify-between items-center w-full px-6 py-4'>
         <Link href='/'>
-          <h1 className='text-xl md:text-2xl font-bold'>UKR ORTO GROUP</h1>
+          <h2 className='text-xl md:text-2xl font-bold'>UKR ORTO GROUP</h2>
         </Link>
         <button
           onClick={toggleMenu}

@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 
 export default function Patient() {
   return (
-    <section className='flex gap-10 mx-auto'>
+    <section className='flex flex-wrap gap-10 mx-auto'>
       <Card txt='Knee' />
       <Card txt='Hip' />
       <Card txt='Shoulder' />
